@@ -1,0 +1,29 @@
+{% extends "todo/layout.html" %}
+
+{% block body %}
+<div class="container">
+  <br>
+  <br>
+  <a href="{% url 'todo:todo_create' %}"class="btn btn-primary" role="button">Add TO-DO</a><br><br>
+  <table class="table" border="2px">
+    <thead>
+      <tr>
+        <th>Todo </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in object_list %}
+        <tr>
+          <!-- <td>{{ todo.num }}</td> -->
+          <td>{{ todo.task }}</td>
+          <th>
+            <a href="{% url 'todo:todo_update' todo.id %}" class="btn btn-warning" role="button">Update</a>
+            <a href="{% url 'todo:todo_remove' todo.id %}" class="btn btn-danger" role="button">Remove</a>
+          </th>
+        </tr>
+      {% endfor %}
+    </tbody>
+    
+  </div>
+
+{% endblock %}

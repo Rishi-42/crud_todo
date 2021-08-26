@@ -1,0 +1,10 @@
+{% extends "todo/layout.html" %}
+{% block body %}
+<div class="container">
+  <form method="post">{% csrf_token %}
+    <br>  
+    <h3>Are you sure you want to remove "{{ object }}" ?</h3><br><br>
+    <button type="Delete" name="Delete" value="Delete" class="btn btn-warning">Remove</button>
+  </form>
+</div>
+{% endblock %}

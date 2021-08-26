@@ -1,0 +1,13 @@
+{% extends "todo/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <form method="post">{% csrf_token %}
+      <h3>Update Todo List</h3>
+      <br>
+      {{form}}
+      
+      <button type="submit" name="button" value="Submit" class="btn btn-warning">Submit</button>
+    </form>
+</div>
+{% endblock %}
